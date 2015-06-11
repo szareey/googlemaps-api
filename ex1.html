@@ -14,17 +14,26 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
 function initialize() {
-  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+  var theirLatlng = new google.maps.LatLng(-25.363882,131.044922);
+  var myLatlng = new google.maps.LatLng(43.67023, -79.4000);
+
+
   var mapOptions = {
-    zoom: 4,
-    center: myLatlng
+    zoom: 2,
+    center: theirLatlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-  var marker = new google.maps.Marker({
-      position: myLatlng,
+  var theirMarker = new google.maps.Marker({
+      position: theirLatlng,
       map: map,
       title: 'Hello World!'
+  });
+
+  var myMarker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hello Me!'
   });
 }
 
